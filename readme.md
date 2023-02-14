@@ -15,9 +15,13 @@ Set an Environment Variable named `TZ` with your timezone in order to get your m
 ## Volumes
 You should mount a volume on `/config`. The Python script is hard coded to look for a config file at this location.
 
+# Building
+To build this container yourself:
+`docker build . --tag omnik-data-logger`
+
 # Running
 To run this container with the required volume and environment variable
-`docker run -d -v [host path]:/config -e TZ=Europe/Amsterdam omnik-data-logger:latest`
+`docker run -d -v [host path]:/config -e TZ=Europe/Amsterdam --name omnik omnik-data-logger:latest`
 
 # Configuration
 The data logger is configured by a config.cfg file that must be placed in `/config`.
